@@ -25,6 +25,12 @@ import {
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
 
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
+
+import HomeScreen from "./src/screens/home";
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -57,7 +63,17 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
   );
 }
 
-function App(): React.JSX.Element {
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Trang chủ" }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+function _App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
