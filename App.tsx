@@ -30,6 +30,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
 import HomeScreen from "./src/screens/home";
+import ContentScreen from "./src/screens/content";
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -68,6 +69,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Trang chủ" }} />
+        <Stack.Screen name="Content" component={ContentScreen} options={{ title: "Nội dung" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
