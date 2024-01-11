@@ -6,6 +6,7 @@ const Stack = createNativeStackNavigator();
 import HomeScreen from "./src/screens/home";
 import ContentScreen from "./src/screens/content";
 import CCameraScreen from "./src/screens/camera";
+import LibraryScreen from "./src/screens/library";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Trang chủ" }} />
         <Stack.Screen name="Content" component={ContentScreen} options={{ title: "Nội dung" }} />
         <Stack.Screen name="Camera" component={CCameraScreen} options={{ title: "Camera" }} />
+        <Stack.Screen name="Library" component={LibraryScreen} options={{ title: "Library" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
