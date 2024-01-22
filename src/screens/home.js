@@ -89,6 +89,12 @@ export default function HomeScreen({ navigation }) {
         color="black"
         onPress={() => navigation.navigate("Camera")}
       ></FAB>
+      <FAB
+        style={styles.fab1}
+        icon="camera"
+        color="black"
+        onPress={() => navigation.navigate("AR")}
+      ></FAB>
     </View>
   );
 }
@@ -123,6 +129,15 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     borderRadius: 100,
     backgroundColor: "coral",
+    margin: 16,
+    right: 0,
+  },
+  fab1: {
+    position: "absolute",
+    bottom: 65,
+    alignSelf: "flex-end",
+    borderRadius: 100,
+    backgroundColor: "black",
     margin: 16,
     right: 0,
   },
