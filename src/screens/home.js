@@ -85,13 +85,13 @@ export default function HomeScreen({ navigation }) {
       </ScrollView>
       <FAB
         style={styles.fab}
-        icon="camera"
+        icon={{uri: 'https://cdn.icon-icons.com/icons2/930/PNG/512/camera_icon-icons.com_72364.png'}}
         color="black"
         onPress={() => navigation.navigate("Camera")}
       ></FAB>
       <FAB
         style={styles.fab1}
-        icon="camera"
+        icon={{uri: 'https://cdn.icon-icons.com/icons2/2248/PNG/512/augmented_reality_icon_136923.png'}}
         color="black"
         onPress={() => navigation.navigate("AR")}
       ></FAB>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     bottom: 65,
     alignSelf: "flex-end",
     borderRadius: 100,
-    backgroundColor: "black",
+    backgroundColor: "coral",
     margin: 16,
     right: 0,
   },
