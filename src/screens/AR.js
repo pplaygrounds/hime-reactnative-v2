@@ -1,44 +1,79 @@
-import React, { Component } from "react";
+
+// import React, { useEffect } from 'react';
+// import { ViroARScene, Viro3DObject, ViroARTrackingTargets } from '@viro-community/react-viro';
+import React, { Component } from 'react';
+
+import {StyleSheet} from 'react-native';
 
 import {
   ViroARScene,
-  ViroAmbientLight,
-  ViroARImageMarker,
+  ViroMaterials,
+  ViroNode,
+  ViroAnimations,
   Viro3DObject,
+  ViroLightingEnvironment,
+  ViroARImageMarker,
   ViroARTrackingTargets,
+  ViroSphere,
+  ViroSpotLight,
+  ViroQuad,
 } from "@viro-community/react-viro";
 
-var createReactClass = require("create-react-class");
+var createReactClass = require('create-react-class');
 
-var ARScreen = createReactClass({
-  render: function () {
+
+var ARScene = createReactClass({
+
+  render: function() {
     return (
       <ViroARScene>
-        <ViroAmbientLight color="#ffffff" />
         <ViroARImageMarker target={"logo"}>
           <Viro3DObject
-            source={require("../assets/an_sac_menh_chi_bao.obj")}
-            resources={[require("../assets/an_sac_menh_chi_bao.mtl")]}
-            highAccuracyEvents={true}
-            position={[1, 3, -5]}
-            scale={[2, 2, 2]}
-            rotation={[45, 0, 0]}
-            type="OBJ"
-            transformBehaviors={["billboard"]}
-          />
+              scale={[0, 0, 0]}
+              source={require('./../assets/an_sac_menh_chi_bao1.obj')}
+              resources={[require('./../assets/an_sac_menh_chi_bao1.mtl'),
+                          ]}
+              type="OBJ"
+              />
         </ViroARImageMarker>
       </ViroARScene>
-    );
-  },
-});
+        );
+      },
+    });
 
 ViroARTrackingTargets.createTargets({
-  logo: {
-    source: require("../assets/an_sac_menh_chi_bao.png"),
-    orientation: "Up",
-    physicalWidth: 0.157, // real world width in meters
-    type: "Image",
-  },
+  logo : {
+    source : require('./../assets/an_sac_menh_chi_bao3.png'),
+    orientation : "Up",
+    physicalWidth : 0.165
+  }
 });
 
-module.exports = ARScreen;
+
+// const ARScene = () => {
+//   // useEffect(() => {
+//   //    ViroARTrackingTargets.createTargets({
+//   //     targetImage: {
+//   //       source: require('./../assets/an_sac_menh_chi_bao3.png'),
+//   //       orientation: 'Up',
+//   //       physicalWidth: 0.1, 
+//   //     },
+//   //   });
+//   // }, []);
+
+//   return (
+//     <ViroARScene>
+//       <Viro3DObject
+//         source={require('../assets/an_sac_menh_chi_bao1.obj')}
+//         resources={[
+//           require('../assets/an_sac_menh_chi_bao3.png'),
+//         ]}
+//         position={[0, 0, -2]}
+//         scale={[0.1, 0.1, 0.1]}
+//         type="OBJ"
+//       />
+//     </ViroARScene>
+//   );
+// };
+
+export default ARScene;
